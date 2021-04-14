@@ -1,9 +1,6 @@
 <h1>Random Beer</h1>
 {{#each beersFromApi}}
-<img src="{{this.image_url}}" alt="beer image">
-<h2>{{this.name}}</h2>
-<h3>{{this.tagline}}</h3>
-<p>{{this.description}}</p>
+{{>info this}}
 <h4>Food Pairing</h4>
 <ul>
     {{#each this.food_pairing}}
@@ -13,8 +10,3 @@
 <p>Brewers Tips : {{this.brewers_tips}}</p>
 {{/each}}
 
-<ul class="people_list">
-  {{#each people}}
-  <li>{{this}}</li>
-  {{/each}}
-</ul>
