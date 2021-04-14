@@ -24,7 +24,14 @@ app.get('/beers', (req, res) => {
     res.render('beers',{beersFromApi})
     })
   
+  .catch(error => console.log(error));  
   
+});
+app.get('/beer/:id', (req, res) => {
+  punkAPI.getBeer(req.params.id)
+  .then((beersFromApi) =>{
+    res.render('beers',{beersFromApi})
+    })
   .catch(error => console.log(error));  
   
 });
